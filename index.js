@@ -34,8 +34,7 @@ async function exec () {
       return fs.appendFileSync(cliConfigPath, yamledResult)
     }
 
-    console.log('No issueKeys found.')
-    core.setNeutral()
+    core.setFailed('No issueKey found');
   } catch (error) {
     core.setFailed(error.toString())
   }
